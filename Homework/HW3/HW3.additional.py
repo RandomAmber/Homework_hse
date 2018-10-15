@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[ ]:
-
 
 def main():
     sentences = [random_imperative(), random_conditional(), random_negative(), random_question(), random_sentence()]
