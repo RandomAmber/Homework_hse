@@ -98,20 +98,19 @@ def freq_dir_start(dirs):#4
 
 
 def freq_format(dirs): #3
-    if dirs != 0:
-        file_names = []
-        for dir in dirs:
-            files = os.listdir(dir)
-            for file in files:
-                if os.path.isfile(file):
-                    file_names.append(file)
-        formats = []
-        for name in file_names:
-            form = os.path.basename(name).split('.')[-1]
-            if form != os.path.basename(name):
-                formats.append(os.path.basename(name).split('.')[-1])
-        formats = {formats.count(key):key for key in set(formats)}
-        return formats[max(formats.keys())]
+    file_names = []
+    for dir in dirs:
+        files = os.listdir(dir)
+        for file in files:
+            if os.path.isfile(file):
+                file_names.append(file)
+    formats = []
+    for name in file_names:
+        form = os.path.basename(name).split('.')[-1]
+        if form != os.path.basename(name):
+            formats.append(os.path.basename(name).split('.')[-1])
+    formats = {formats.count(key):key for key in set(formats)}
+    return formats[max(formats.keys())]
 
 
 # In[65]:
